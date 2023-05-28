@@ -1,0 +1,21 @@
+<div class="container">
+<div class="box">
+<form (ngSubmit)="onSubmit()" class="my-5">
+    <h2 class="">Hey, welcome back</h2>
+    <h4 class="mb-5">Good to see you again</h4>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" id="form5Example2" class="form-control" name="email" [(ngModel)]="email" required />
+      <label class="form-label" for="form5Example2">Email address</label>
+    </div>
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="form6Example2" class="form-control" name="password" [(ngModel)]="password" required />
+      <label class="form-label" for="form6Example2">Password</label>
+    </div>
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+    <a [routerLink]="'/signup'">Or create account</a>
+  </form>
+</div>
+</div>
