@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -14,8 +14,24 @@ export class SignupComponent {
   email!: string;
   password!: string;
   selectedFile!: File;
+  showSuccessMessage: any = false;
+  
+  // from Validate
+  signupForm!: FormGroup;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private fb: FormBuilder) {
+
+    this.signupForm = this.fb.group({
+      f_name: [null, [Validators.required]], 
+      l_name: [null, [Validators.required]], 
+      email: [null, [Validators.required, Validators.email]], 
+      password: [null, [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$/)]],
+    })
+  }
+
+  get registerForm() {
+    return this.signupForm.controls;
+  }
 
   onFileSelect(event: any) {
     this.selectedFile = event.target.files[0];
@@ -33,10 +49,9 @@ export class SignupComponent {
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
 
-    this.http.post(`http://localhost:3000/register`, formData, { headers: headers }).subscribe((resultData: any) => {
-      console.log(resultData);
-      alert('register success');
-
-    })
+    this.http.post(`http://localhost:4000/register`, formData, { headers: headers }).subscribe((resultData: any) => { 
+      
+    this.showSuccessMessage = true;
+  })
   }
 }

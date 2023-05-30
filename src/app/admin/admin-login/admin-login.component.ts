@@ -4,15 +4,16 @@ import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrls: ['./admin-login.component.css']
 })
-export class LoginComponent {
+export class AdminLoginComponent {
   email!: string;
   password!: string;
   tocken: any;
-  loginForm!: FormGroup
+  loginForm!: FormGroup;
+  errorAlert = false;
   constructor(private loginService: LoginService, private router: Router, private fb: FormBuilder) {
 
     this.loginForm = this.fb.group({
@@ -30,8 +31,14 @@ export class LoginComponent {
           // Login successful, store token and redirect to home page
           localStorage.setItem('token', res.token);
           // Redirect to home page
-          this.router.navigate(['/home'])
+          if(res.isAdmin === true) {
+            this.router.navigate(['/admin/books'])
+          } else {
+            this.errorAlert = true;
+          }
         }
       );
 }
 }
+
+
