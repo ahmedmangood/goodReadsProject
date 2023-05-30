@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="box">
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="my-5">
+        <h2 class="">Admin Only</h2>
+        <!-- Email input -->
+        <label class="form-label" for="form3Example3">Email address</label>
+            <input
+              type="email"
+              [name]="email"
+              id="form3Example3"
+              formControlName="email"
+              [(ngModel)]="email"
+              class="form-control"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text text-danger" *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">
+              <span *ngIf="loginForm.controls['email'].errors?.['required']">
+                This Field Is Required
+              </span>
+              <span *ngIf="loginForm.controls['email'].errors?.['email']">
+                Type a Valid Email
+              </span>
+            </div>
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example4">Password</label>
+          <input
+            type="password"
+            [name]="password"
+            formControlName="password"
+            id="form3Example4"
+            class="form-control"
+            [(ngModel)]="password"
+            aria-describedby="passwordHelp"
+          />
+          <div id="passwordHelp" class="form-text text-danger" *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+            <span *ngIf="loginForm.controls['password'].errors?.['required']">
+              This Field Is Required
+            </span>
+            <span *ngIf="loginForm.controls['password'].errors?.['minlength']">
+              Less Than 8 Characters | 
+            </span>
+            <span *ngIf="loginForm.controls['password'].errors?.['pattern']">
+              Week Password
+            </span>
+          </div>
+        </div>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+      </form>
+      <div *ngIf="errorAlert === true">
+        <span class="alert alert-danger text-center">Error: you are not an admin !!</span>
+      </div>
+    </div>
+    </div>
+    

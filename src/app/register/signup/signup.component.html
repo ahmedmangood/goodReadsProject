@@ -1,43 +1,122 @@
 <div class="container">
-<div class="box">
-<h4 class="my-5">Join Our Book Community !</h4>
-  <form class="mt-5" (ngSubmit)="onSubmit()" #registerForm="ngForm">
-    <!-- 2 column grid layout with text inputs for the first and last names -->
-    <div class="row mb-4">
-      <div class="col">
-        <div class="form-outline">
-          <input type="text" [name]="f_name" [ngModelOptions]="{standalone: true}" id="form3Example1" [(ngModel)]="f_name" class="form-control" />
-          <label class="form-label" for="form3Example1">First name</label>
+  <div class="box">
+    <h4 class="my-5">Join Our Book Community !</h4>
+    <form
+      class="mt-5"
+      (ngSubmit)="onSubmit()"
+      [formGroup]="signupForm"
+      #registerForm="ngForm"
+    >
+      <!-- 2 column grid layout with text inputs for the first and last names -->
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="form3Example1">First name</label>
+            <input
+              type="text"
+              [name]="f_name"
+              formControlName="f_name"
+              id="form3Example1"
+              [(ngModel)]="f_name"
+              class="form-control"
+              aria-describedby="fnameHelp"
+            />
+            <div id="fnameHelp" class="form-text text-danger" *ngIf="signupForm.controls['f_name'].touched && signupForm.controls['f_name'].invalid">
+              <span *ngIf="signupForm.controls['f_name'].errors?.['required']">
+                This Field Is Required
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- last name -->
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="form3Example2">Last name</label>
+            <input
+              type="text"
+              [name]="l_name"
+              id="form3Example2"
+              formControlName="l_name"
+              [(ngModel)]="l_name"
+              class="form-control"
+              aria-describedby="lnameHelp"
+            />
+            <div id="lnameHelp" class="form-text text-danger" *ngIf="signupForm.controls['l_name'].touched && signupForm.controls['l_name'].invalid">
+              <span *ngIf="signupForm.controls['l_name'].errors?.['required']">
+                This Field Is Required
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col">
-        <div class="form-outline">
-          <input type="text" [name]="l_name" [ngModelOptions]="{standalone: true}" id="form3Example2" [(ngModel)]="l_name" class="form-control" />
-          <label class="form-label" for="form3Example2">Last name</label>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Email input -->
-    <div class="form-outline mb-4">
-      <input type="email" [name]="email" [ngModelOptions]="{standalone: true}" id="form3Example3" [(ngModel)]="email" class="form-control" />
-      <label class="form-label" for="form3Example3">Email address</label>
-    </div>
-  
-    <!-- Password input -->
-    <div class="form-outline mb-4">
-      <input type="password" [name]="password" [ngModelOptions]="{standalone: true}" id="form3Example4" [(ngModel)]="password" class="form-control" />
-      <label class="form-label" for="form3Example4">Password</label>
-    </div>
 
-    <!-- upload image input -->
-    <div class="form-outline mb-4">
-      <input type="file" name="image" id="form9Example4" (change)="onFileSelect($event)" (change)="onFileSelect($event)" class="form-control" />
-      <label class="form-label" for="form9Example4">upload image</label>
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example3">Email address</label>
+        <input
+          type="email"
+          [name]="email"
+          id="form3Example3"
+          formControlName="email"
+          [(ngModel)]="email"
+          class="form-control"
+          aria-describedby="emailHelp"
+        />
+        <div id="emailHelp" class="form-text text-danger" *ngIf="signupForm.controls['email'].touched && signupForm.controls['email'].invalid">
+          <span *ngIf="signupForm.controls['email'].errors?.['required']">
+            This Field Is Required
+          </span>
+          <span *ngIf="signupForm.controls['email'].errors?.['email']">
+            Type a Valid Email
+          </span>
+        </div>
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example4">Password</label>
+        <input
+          type="password"
+          [name]="password"
+          formControlName="password"
+          id="form3Example4"
+          [(ngModel)]="password"
+          class="form-control"
+          aria-describedby="passwordHelp"
+        />
+        <div id="passwordHelp" class="form-text text-danger" *ngIf="signupForm.controls['password'].touched && signupForm.controls['password'].invalid">
+          <span *ngIf="signupForm.controls['password'].errors?.['required']">
+            This Field Is Required
+          </span>
+          <span *ngIf="signupForm.controls['password'].errors?.['minlength']">
+            Less Than 8 Characters | 
+          </span>
+          <span *ngIf="signupForm.controls['password'].errors?.['pattern']">
+            Week Password
+          </span>
+        </div>
+      </div>
+
+      <!-- upload image input -->
+      <div class="form-outline mb-4">
+        <input
+          type="file"
+          name="image"
+          id="form9Example4"
+          (change)="onFileSelect($event)"
+          (change)="onFileSelect($event)"
+          class="form-control"
+        />
+        <label class="form-label" for="form9Example4">upload image</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="signupForm.invalid">
+        Sign up
+      </button>
+    </form>
+    <div *ngIf="showSuccessMessage">
+      <div class="alert alert-success text-center">Sign up successfully</div>
     </div>
-  
-    <!-- Submit button -->
-    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
-  </form>
-</div>
+  </div>
 </div>
