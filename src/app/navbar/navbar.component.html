@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand mt-2 mt-lg-0" href="#">
       Books<span class="logo">Library</span>
@@ -20,4 +20,37 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
+
+
+
+
+
+<nav class="navbar navbar-transparent navbar-expand-lg bg-body-tertiary rounded navno" aria-label="Thirteenth navbar example">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-lg-flex btn-pd" id="navbarsExample11">
+      <a class="navbar-brand logo col-lg-3 me-0" href="#">Book<strong>library</strong></a>
+      <ul class="navbar-nav col-lg-6 gap-3 justify-content-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <div class="d-lg-flex gap-3 col-lg-2 justify-content-lg-end">
+        <button class="btn btn-outline-light px-3" [routerLink]="'/signup'">Sign in</button>
+        <button class="btn btn-light px-4" [routerLink]="'/login'">Join</button>
+      </div>
+    </div>
+  </div>

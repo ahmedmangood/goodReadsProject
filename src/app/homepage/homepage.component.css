@@ -1,0 +1,97 @@
+.navbar{
+    background:transparent;
+}
+
+a{
+    color: #E0E0E0;
+    font-size: 1.2rem;
+}
+
+a:hover {
+    color: rgb(170, 170, 170);
+  }
+
+.logo{
+    color: #E0E0E0;
+    font-size: 1.8rem;
+    padding-left: 1vw;
+}
+
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 92.7%;
+    background-image: url(../../assets/imgs/hero.jpg);
+    /* background-repeat: repeat-x; */
+    opacity: 0.08;
+}
+
+.mainText {
+    position: absolute;
+    width: 1045px;
+    height: 160px;
+    left: 75px;
+    top: 401px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 77px;
+
+    color: #FFFFFF;
+}
+
+.btn-config1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 8px;
+
+    position: absolute;
+    width: 215px;
+    height: 75px;
+    left: 75px;
+    top: 578px;
+
+    background: #121212;
+    mix-blend-mode: normal;
+    border-radius: 7px;
+}
+
+.btn-config2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 8px;
+
+    position: absolute;
+    width: 260px;
+    height: 75px;
+    left: 308px;
+    top: 578px;
+
+    background: #121212;
+    mix-blend-mode: normal;
+    border-radius: 4px;
+}
+
+.mbr-style {
+    position: absolute;
+    width: 155px;
+    height: 30px;
+    left: 100px;
+    top: 666px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #FFFFFF;
+}
