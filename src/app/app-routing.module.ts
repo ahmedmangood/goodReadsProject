@@ -6,11 +6,16 @@ import { SignupComponent } from './register/signup/signup.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AddBooksComponent } from './admin/add-books/add-books.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ExploreComponent } from './explore/explore.component';
 
 const routes: Routes = [
   {
     path: "",
     component: HomepageComponent
+  },
+  {
+    path: "explore",
+    component: ExploreComponent
   },
   {
     path: "home",

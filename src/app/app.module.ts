@@ -13,6 +13,7 @@ import { CardsComponent } from './list-books/cards/cards.component';
 import { AddBooksComponent } from './admin/add-books/add-books.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ExploreComponent } from './explore/explore.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     CardsComponent,
     AddBooksComponent,
     AdminLoginComponent,
-    HomepageComponent
+    HomepageComponent,
+    ExploreComponent
   ],
   imports: [
     BrowserModule,
