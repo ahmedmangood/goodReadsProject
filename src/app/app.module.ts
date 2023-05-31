@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CardsComponent } from './list-books/cards/cards.component';
 import { AddBooksComponent } from './admin/add-books/add-books.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
     NavbarComponent,
     CardsComponent,
     AddBooksComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
