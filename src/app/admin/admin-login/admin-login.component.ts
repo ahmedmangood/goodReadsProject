@@ -32,7 +32,7 @@ export class AdminLoginComponent {
           localStorage.setItem('token', res.token);
           // Redirect to home page
           if(res.isAdmin === true) {
-            this.router.navigate(['/admin/books'])
+            this.router.navigate(['/admin/dashboard'])
           } else {
             this.errorAlert = true;
           }
