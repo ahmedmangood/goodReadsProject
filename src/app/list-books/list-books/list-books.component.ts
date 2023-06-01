@@ -11,7 +11,6 @@ export class ListBooksComponent {
   constructor(private getData: GetDataService) {}
 
   ngOnInit() {
-    this.getData.getListBooks().subscribe((res: any) => this.books = res
-    )
+    this.getData.getListBooks().subscribe((res: any) => this.books = res)
   }
 }

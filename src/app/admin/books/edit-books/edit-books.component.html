@@ -1,0 +1,129 @@
+<div class="container">
+    <div class="box">
+      <h3 class="my-5">Edit Book</h3>
+      <form
+        class="mt-5"
+        (ngSubmit)="onSubmit()"
+      >
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="form3Example1">Title</label>
+              <input
+                type="text"
+                [name]="book.title"
+                [value]="book.title"
+                formControlName="title"
+                id="form3Example1"
+                [(ngModel)]="book.title"
+                class="form-control"
+                aria-describedby="fnameHelp"
+              />
+              <!-- <div id="fnameHelp" class="form-text text-danger" *ngIf="addBookForm.controls['title'].touched && addBookForm.controls['title'].invalid">
+                <span *ngIf="addBookForm.controls['title'].errors?.['required']">
+                  This Field Is Required
+                </span>
+              </div> -->
+            </div>
+          </div>
+          <!-- last name -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example2">Authors</label>
+              <input
+                type="text"
+                [name]="book?.authorID.firstName"
+                [value]="book?.authorID.firstName"
+                id="form3Example2"
+                formControlName="authorID"
+                [(ngModel)]="book?.authorID.firstName"
+                class="form-control"
+                aria-describedby="lnameHelp"
+              />
+              <!-- <div id="lnameHelp" class="form-text text-danger" *ngIf="addBookForm.controls['authors'].touched && addBookForm.controls['authors'].invalid">
+                <span *ngIf="addBookForm.controls['authors'].errors?.['required']">
+                  This Field Is Required
+                </span>
+              </div> -->
+            </div>
+  
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Category</label>
+          <input
+            type="text"
+            [name]="book?.categoryID.name"
+            [value]="book?.categoryID.name"
+            id="form3Example3"
+            formControlName="category"
+            [(ngModel)]="book?.categoryID.name"
+            class="form-control"
+            aria-describedby="emailHelp"
+          />
+          <!-- <div id="emailHelp" class="form-text text-danger" *ngIf="addBookForm.controls['category'].touched && addBookForm.controls['category'].invalid">
+            <span *ngIf="addBookForm.controls['category'].errors?.['required']">
+              This Field Is Required
+            </span>
+          </div> -->
+        </div>
+  
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example4">Description</label>
+          <input
+            type="text"
+            [name]="book.description"
+            [value]="book.description"
+            formControlName="description"
+            id="form3Example4"
+            [(ngModel)]="book.description"
+            class="form-control"
+            aria-describedby="passwordHelp"
+          />
+          <!-- <div id="passwordHelp" class="form-text text-danger" *ngIf="addBookForm.controls['description'].touched && addBookForm.controls['description'].invalid">
+            <span *ngIf="addBookForm.controls['description'].errors?.['required']">
+              This Field Is Required
+            </span>
+            <span *ngIf="addBookForm.controls['description'].errors?.['minlength']">
+              Less Than 5 Characters 
+            </span>
+            <span *ngIf="addBookForm.controls['description'].errors?.['maxlength']">
+                More Than 100 Characters
+            </span>
+          </div> -->
+        </div>
+<!--         
+         upload image input
+        <label class="form-label" for="form9Example4">Select Date</label>
+        <div class="form-outline mb-4">
+            <input
+              type="date"
+              [name]="publication_date"
+              id="form9Example4"
+              class="form-control"
+            />
+          </div> -->
+
+
+        <!-- upload image input -->
+        <div class="form-outline mb-4">
+          <input
+            type="file"
+            name="image"
+            id="form9Example4"
+            (change)="book.onFileSelect($event)"
+            (change)="book.onFileSelect($event)"
+            class="form-control"
+          />
+          <label class="form-label" for="form9Example4">upload image</label>
+        </div>
+  
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">
+          edit Book
+        </button>
+      </form>
+      <div *ngIf="successMsg">
+        <div class="alert alert-success text-center">Book Updated successfully</div>
+      </div>
+    </div>
+  </div>
