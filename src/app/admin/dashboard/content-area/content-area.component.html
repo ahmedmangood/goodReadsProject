@@ -1,12 +1,41 @@
 <div class="col py-3">
     <div class="card bg-dark">
         <div class="card-header">
-          Featured
+          Latest Books
         </div>
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="content-box" *ngFor="let bookData of booksData">
+            <img [src]="bookData.imageUrl" alt="">
+            <p class="card-text">{{bookData.title}}</p>
+          </div>
+          <a [routerLink]="'/admin/books'" class="btn btn-primary">Go Books List</a>
         </div>
       </div>
+</div>
+<div class="col py-3">
+  <div class="card bg-dark">
+      <div class="card-header">
+        Latest Authors
+      </div>
+      <div class="card-body">
+        <div class="content-box" *ngFor="let author of authors">
+          <img [src]="author.photo" alt="">
+          <p class="card-text">{{author.firstName + " " + author.lastName}}</p>
+        </div>
+        <a [routerLink]="'/admin/authors'" class="btn btn-primary">Go Authors List</a>
+      </div>
+    </div>
+</div>
+<div class="col py-3">
+  <div class="card bg-dark">
+      <div class="card-header">
+        Latest Categories
+      </div>
+      <div class="card-body">
+        <div class="content-box" *ngFor="let category of categories">
+          <p class="card-text">{{category.name}}</p>
+        </div>
+        <a [routerLink]="'/admin/categories'" class="btn btn-primary">Go Categories List</a>
+      </div>
+    </div>
 </div>

@@ -1,3 +1,19 @@
 .card {
     color: #eee
 }
+img {
+    width: 25px;
+}
+.content-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px;
+    background-color: #575757;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.content-box p {
+    flex: 0.9;
+}

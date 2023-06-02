@@ -27,8 +27,7 @@ export class EditBooksComponent {
     this.editBookForm = this.fb.group({
       title: [null, [Validators.required]], 
       authorID: [null, [Validators.required]],
-      categoryID: [null, [Validators.required]], 
-      description: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(100)]]
+      categoryID: [null, [Validators.required]]
     })
 
 
@@ -53,8 +52,6 @@ export class EditBooksComponent {
     newData.append("title", this.book.title)
     newData.append("authorID", this.book.authorID._id.toString())
     newData.append("categoryID", this.book.categoryID._id.toString())
-    newData.append("description", this.book.description)
-    newData.append("description", this.book.description)
     if(this.book.image) {
       newData.append("image", this.book.image, this.book.image.filename);
     }
@@ -67,5 +64,8 @@ export class EditBooksComponent {
 
     this.bookService.updateBook(newData, this.id, headers).subscribe((val: any) => this.book = val)
     this.successMsg = true;
+    setTimeout(() => {
+      this.router.navigate(['/admin/books']);
+    }, 3000);
   }
 }

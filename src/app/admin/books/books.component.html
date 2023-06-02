@@ -1,5 +1,8 @@
 <div class="container">
     <h3 class="display-4 my-5">Books List</h3>
+    <div *ngIf = "deleteMsg">
+      <div class="alert alert-danger text-center">Book is Deleted</div>
+    </div>
     <button class="btn btn-success mb-3" [routerLink]="'add'"><i class="fas fa-plus"></i> Add Book</button>
     <table class="table table-bordered">
       <thead>
@@ -26,7 +29,4 @@
         </tr>
       </tbody>
     </table>
-    <div *ngIf = "deleteMsg">
-      <div class="alert alert-danger text-center">Book is Deleted</div>
-    </div>
   </div>
