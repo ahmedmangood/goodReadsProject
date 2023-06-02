@@ -19,6 +19,15 @@ input:focus {
     color: #eeeeeeb8;
     border-color: #3d3d3d;
 }
+select{
+    background-color: #ffffff1c;
+    color: #eeeeeeb8;
+}
+option {
+    background-color: #000;
+    color: #eeeeeeb8
+}
+
 button {
     border: 1px solid #eee;
     background-color: #292727;

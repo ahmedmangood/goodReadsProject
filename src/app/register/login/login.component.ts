@@ -30,7 +30,7 @@ export class LoginComponent {
           // Login successful, store token and redirect to home page
           localStorage.setItem('token', res.token);
           // Redirect to home page
-          this.router.navigate(['/home'])
+          this.router.navigate(['/list-books'])
         }
       );
 }

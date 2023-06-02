@@ -66,32 +66,6 @@
             </span>
           </div>
         </div>
-  
-
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example4">Description</label>
-          <input
-            type="text"
-            [name]="book.description"
-            [value]="book.description"
-            formControlName="description"
-            id="form3Example4"
-            [(ngModel)]="book.description"
-            class="form-control"
-            aria-describedby="passwordHelp"
-          />
-          <div id="passwordHelp" class="form-text text-danger" *ngIf="editBookForm.controls['description'].touched && editBookForm.controls['description'].invalid">
-            <span *ngIf="editBookForm.controls['description'].errors?.['required']">
-              This Field Is Required
-            </span>
-            <span *ngIf="editBookForm.controls['description'].errors?.['minlength']">
-              Less Than 5 Characters 
-            </span>
-            <span *ngIf="editBookForm.controls['description'].errors?.['maxlength']">
-                More Than 100 Characters
-            </span>
-          </div>
-        </div>
         <!-- upload image input -->
         <div class="form-outline mb-4">
           <input

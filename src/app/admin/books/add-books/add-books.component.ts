@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Data } from '@angular/router';
+import { Router } from '@angular/router';
 import { GetDataService } from 'src/app/services/get-data.service';
 
 @Component({
@@ -14,8 +14,6 @@ export class AddBooksComponent {
   title!: string;
   authorID!: string;
   categoryID!: string;
-  description!: string;
-  // publication_date: Date | any;
   selectedFile!: File;
 
   // Selected options
@@ -27,13 +25,12 @@ export class AddBooksComponent {
   // from Validate
   addBookForm!: FormGroup;
 
-  constructor(private http: HttpClient, private fb: FormBuilder, private dataService: GetDataService) {
+  constructor(private router: Router, private fb: FormBuilder, private dataService: GetDataService) {
 
     this.addBookForm = this.fb.group({
       title: [null, [Validators.required]], 
       authors: [null, [Validators.required]],
-      category: [null, [Validators.required]], 
-      description: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(100)]]
+      category: [null, [Validators.required]]
     })
   }
 
@@ -41,7 +38,6 @@ export class AddBooksComponent {
     this.dataService.getListAuthor().subscribe(res => this.authors = res);
     
     this.dataService.getListCategory().subscribe(res => this.categories = res)
-    // console.log(this.categories);
     
   }
 
@@ -58,7 +54,6 @@ export class AddBooksComponent {
     formData.append("title", this.title)
     formData.append("authorID", this.authorID.toString())
     formData.append("categoryID", this.categoryID.toString())
-    formData.append("description", this.description)
     // formData.append("publication_date", this.publication_date)
     formData.append('image', this.selectedFile)
 
@@ -68,8 +63,10 @@ export class AddBooksComponent {
     console.log(headers);
     
     this.dataService.addBook(formData, headers).subscribe((resultData: any) => { 
-      console.log(resultData);
     this.showSuccessMessage = true;
+    setTimeout(() => {
+      this.router.navigate(['/admin/books']);
+    }, 3000);
   })
   }
 

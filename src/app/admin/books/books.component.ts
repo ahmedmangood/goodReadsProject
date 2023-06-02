@@ -24,6 +24,9 @@ export class BooksComponent {
       this.arrBooksList = this.arrBooksList?.filter((book:any) => book._id != id)
     })
 
-    this.deleteMsg = true
+    this.deleteMsg = true;
+    setTimeout(() => {
+      location.reload();
+    }, 3000);
   }
 }
