@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class CardsComponent {
   @Input() singleBook!: any;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   showDetails(id: any) {
     this.router.navigate([`details/${id}`]);
