@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="box">
+      <h3 class="my-5">Add Category</h3>
+      <form
+        class="mt-5"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="addCatForm"
+        #categoryForm="ngForm"
+      >
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="form3Example1">Name</label>
+              <input
+                type="text"
+                [name]="name"
+                formControlName="name"
+                id="form3Example1"
+                [(ngModel)]="name"
+                class="form-control"
+                aria-describedby="fnameHelp"
+              />
+              <div id="fnameHelp" class="form-text text-danger" *ngIf="addCatForm.controls['name'].touched && addCatForm.controls['name'].invalid">
+                <span *ngIf="addCatForm.controls['name'].errors?.['required']">
+                  This Field Is Required
+                </span>
+              </div>
+    
+  
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="addCatForm.invalid">
+          Add Category
+        </button>
+        </div>
+        </div>
+      </form>
+      <div *ngIf="showSuccessMessage">
+        <div class="alert alert-success text-center">Category Added successfully</div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+<!-- 
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+                       
+            <form 
+            (ngSubmit)="onSubmit()"
+            [formGroup]="addCatForm"
+            #categoryForm="ngForm"
+            >
+               
+                <input
+                type="text"
+                [name]="name"
+                formControlName="name"
+                id="form3Example1"
+                [(ngModel)]="name"
+                class="form-control"
+                aria-describedby="fnameHelp"
+              />
+              <div id="fnameHelp" class="form-text text-danger" *ngIf="addCatForm.controls['name'].touched && addCatForm.controls['name'].invalid">
+                <span *ngIf="addCatForm.controls['name'].errors?.['required']">
+                  This Field Is Required
+                </span>
+              </div>
+            
+                <button type="submit" [disabled]="addCatForm.invalid">Add Category</button>
+            </form>
+            
+        </div>
+    </div>
+</div> -->
+
