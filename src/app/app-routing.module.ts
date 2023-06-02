@@ -1,3 +1,5 @@
+import { AddcategoryComponent } from './admin/category/addcategory/addcategory.component';
+import { CategoryComponent } from './admin/category/category.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './register/login/login.component';
@@ -40,23 +42,34 @@ const routes: Routes = [
   {
     path: "admin/books",
     component: BooksComponent,
-    canActivate: [authAdminGuard]
+    // canActivate: [authAdminGuard]
   },
   {
     path: "admin/books/add",
-    component: AddBooksComponent,
-    canActivate: [authAdminGuard]
+    component: AddBooksComponent
+    // canActivate: [authAdminGuard]
   },
   {
     path: "admin/books/edit/:id",
-    component: EditBooksComponent,
-    canActivate: [authAdminGuard]
+    component: EditBooksComponent
+    // canActivate: [authAdminGuard]
   },
   {
     path: "admin/dashboard",
-    component: DashboardComponent,
-    canActivate: [authAdminGuard]
+    component: DashboardComponent
+    // canActivate: [authAdminGuard]
   },
+  {
+    path: "admin/category",
+    component: CategoryComponent
+    // canActivate: [authAdminGuard]
+  },
+  {
+    path: "admin/category/add",
+    component: AddcategoryComponent
+    // canActivate: [authAdminGuard]
+  },
+  
   {
     path: "**",
     component: NotFoundComponent

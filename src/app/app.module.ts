@@ -22,6 +22,9 @@ import { EditBooksComponent } from './admin/books/edit-books/edit-books.componen
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthService } from './services/auth.service';
 import { authAdminGuard } from './guards/auth-admin.guard';
+import { CategoryComponent } from './admin/category/category.component';
+import { AddcategoryComponent } from './admin/category/addcategory/addcategory.component';
+import { EidtcategoryComponent } from './admin/category/eidtcategory/eidtcategory.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,11 @@ import { authAdminGuard } from './guards/auth-admin.guard';
     ContentAreaComponent,
     BooksComponent,
     EditBooksComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CategoryComponent,
+    AddcategoryComponent,
+    EidtcategoryComponent,
+   
   ],
   imports: [
     BrowserModule,
