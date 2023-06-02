@@ -11,6 +11,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { BooksComponent } from './admin/books/books.component';
 import { EditBooksComponent } from './admin/books/edit-books/edit-books.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { authAdminGuard } from './guards/auth-admin.guard';
 
 const routes: Routes = [
   {
@@ -34,24 +35,27 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: "admin/login",
-    component: AdminLoginComponent
+    path: "admin/login", component: AdminLoginComponent, canActivate: [authAdminGuard]
   },
   {
     path: "admin/books",
-    component: BooksComponent
+    component: BooksComponent,
+    canActivate: [authAdminGuard]
   },
   {
     path: "admin/books/add",
-    component: AddBooksComponent
+    component: AddBooksComponent,
+    canActivate: [authAdminGuard]
   },
   {
     path: "admin/books/edit/:id",
-    component: EditBooksComponent
+    component: EditBooksComponent,
+    canActivate: [authAdminGuard]
   },
   {
     path: "admin/dashboard",
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [authAdminGuard]
   },
   {
     path: "**",
