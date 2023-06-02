@@ -29,16 +29,21 @@
           </div>
           <!-- last name -->
             <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example2">Authors</label>
-              <input
+              <label class="form-label" for="form3Example2">Author ID</label>
+              <select name="author.id" id="author" formControlName="authors" [(ngModel)]="authorID">
+                <option *ngFor="let author of authors" [value]="author.id">{{author.firstName + " " + author.lastName}}</option>
+              </select>
+              
+              
+              <!-- <input
                 type="text"
-                [name]="authors"
+                [name]="authorID"
                 id="form3Example2"
                 formControlName="authors"
-                [(ngModel)]="authors"
+                [(ngModel)]="authorID"
                 class="form-control"
                 aria-describedby="lnameHelp"
-              />
+              /> -->
               <div id="lnameHelp" class="form-text text-danger" *ngIf="addBookForm.controls['authors'].touched && addBookForm.controls['authors'].invalid">
                 <span *ngIf="addBookForm.controls['authors'].errors?.['required']">
                   This Field Is Required
@@ -46,18 +51,23 @@
               </div>
             </div>
   
-        <!-- Email input -->
+        <!-- category input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="form3Example3">Category</label>
-          <input
+          <select name="category._id" id="category" formControlName="category" [(ngModel)]="categoryID">
+            <option *ngFor="let category of categories" [value]="category._id">{{category.name}}</option>
+          </select>
+          
+          
+          <!-- <input
             type="text"
-            [name]="category"
+            [name]="categoryID"
             id="form3Example3"
             formControlName="category"
-            [(ngModel)]="category"
+            [(ngModel)]="categoryID"
             class="form-control"
             aria-describedby="emailHelp"
-          />
+          /> -->
           <div id="emailHelp" class="form-text text-danger" *ngIf="addBookForm.controls['category'].touched && addBookForm.controls['category'].invalid">
             <span *ngIf="addBookForm.controls['category'].errors?.['required']">
               This Field Is Required

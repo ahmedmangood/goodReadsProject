@@ -4,8 +4,11 @@
       <form
         class="mt-5"
         (ngSubmit)="onSubmit()"
+        [formGroup]="editBookForm"
+        #editForm="ngForm"
+        enctype="multipart/form-data"
       >
-        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <!-- title -->
         <div class="row mb-4">
             <div class="form-outline">
               <label class="form-label" for="form3Example1">Title</label>
@@ -19,51 +22,49 @@
                 class="form-control"
                 aria-describedby="fnameHelp"
               />
-              <!-- <div id="fnameHelp" class="form-text text-danger" *ngIf="addBookForm.controls['title'].touched && addBookForm.controls['title'].invalid">
-                <span *ngIf="addBookForm.controls['title'].errors?.['required']">
+              <div id="fnameHelp" class="form-text text-danger" *ngIf="editBookForm.controls['title'].touched && editBookForm.controls['title'].invalid">
+                <span *ngIf="editBookForm.controls['title'].errors?.['required']">
                   This Field Is Required
                 </span>
-              </div> -->
+              </div>
             </div>
           </div>
-          <!-- last name -->
+          <!-- author name -->
             <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example2">Authors</label>
+              <label class="form-label" for="form3Example2">AuthorID</label>
               <input
                 type="text"
-                [name]="book?.authorID.firstName"
-                [value]="book?.authorID.firstName"
+                [name]="book.authorID._id"
                 id="form3Example2"
                 formControlName="authorID"
-                [(ngModel)]="book?.authorID.firstName"
+                [(ngModel)]="book.authorID._id"
                 class="form-control"
                 aria-describedby="lnameHelp"
               />
-              <!-- <div id="lnameHelp" class="form-text text-danger" *ngIf="addBookForm.controls['authors'].touched && addBookForm.controls['authors'].invalid">
-                <span *ngIf="addBookForm.controls['authors'].errors?.['required']">
+              <div id="lnameHelp" class="form-text text-danger" *ngIf="editBookForm.controls['authorID'].touched && editBookForm.controls['authorID'].invalid">
+                <span *ngIf="editBookForm.controls['authorID'].errors?.['required']">
                   This Field Is Required
                 </span>
-              </div> -->
+              </div>
             </div>
   
-        <!-- Email input -->
+        <!-- category input -->
         <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example3">Category</label>
+          <label class="form-label" for="form3Example3">CategoryID</label>
           <input
             type="text"
-            [name]="book?.categoryID.name"
-            [value]="book?.categoryID.name"
+            [name]="book.categoryID._id"
             id="form3Example3"
-            formControlName="category"
-            [(ngModel)]="book?.categoryID.name"
+            formControlName="categoryID"
+            [(ngModel)]="book.categoryID._id"
             class="form-control"
             aria-describedby="emailHelp"
           />
-          <!-- <div id="emailHelp" class="form-text text-danger" *ngIf="addBookForm.controls['category'].touched && addBookForm.controls['category'].invalid">
-            <span *ngIf="addBookForm.controls['category'].errors?.['required']">
+          <div id="emailHelp" class="form-text text-danger" *ngIf="editBookForm.controls['categoryID'].touched && editBookForm.controls['categoryID'].invalid">
+            <span *ngIf="editBookForm.controls['categoryID'].errors?.['required']">
               This Field Is Required
             </span>
-          </div> -->
+          </div>
         </div>
   
 
@@ -79,39 +80,25 @@
             class="form-control"
             aria-describedby="passwordHelp"
           />
-          <!-- <div id="passwordHelp" class="form-text text-danger" *ngIf="addBookForm.controls['description'].touched && addBookForm.controls['description'].invalid">
-            <span *ngIf="addBookForm.controls['description'].errors?.['required']">
+          <div id="passwordHelp" class="form-text text-danger" *ngIf="editBookForm.controls['description'].touched && editBookForm.controls['description'].invalid">
+            <span *ngIf="editBookForm.controls['description'].errors?.['required']">
               This Field Is Required
             </span>
-            <span *ngIf="addBookForm.controls['description'].errors?.['minlength']">
+            <span *ngIf="editBookForm.controls['description'].errors?.['minlength']">
               Less Than 5 Characters 
             </span>
-            <span *ngIf="addBookForm.controls['description'].errors?.['maxlength']">
+            <span *ngIf="editBookForm.controls['description'].errors?.['maxlength']">
                 More Than 100 Characters
             </span>
-          </div> -->
+          </div>
         </div>
-<!--         
-         upload image input
-        <label class="form-label" for="form9Example4">Select Date</label>
-        <div class="form-outline mb-4">
-            <input
-              type="date"
-              [name]="publication_date"
-              id="form9Example4"
-              class="form-control"
-            />
-          </div> -->
-
-
         <!-- upload image input -->
         <div class="form-outline mb-4">
           <input
             type="file"
             name="image"
             id="form9Example4"
-            (change)="book.onFileSelect($event)"
-            (change)="book.onFileSelect($event)"
+            (change)="onFileSelected($event)"
             class="form-control"
           />
           <label class="form-label" for="form9Example4">upload image</label>

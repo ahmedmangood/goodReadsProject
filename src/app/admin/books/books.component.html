@@ -1,5 +1,5 @@
 <div class="container">
-    <h3 class="display-4 my-5">Your Products</h3>
+    <h3 class="display-4 my-5">Books List</h3>
     <button class="btn btn-success mb-3" [routerLink]="'add'"><i class="fas fa-plus"></i> Add Book</button>
     <table class="table table-bordered">
       <thead>
@@ -20,10 +20,13 @@
             <td>{{book.categoryID?._id}}</td>
             <td>{{book.authorID?._id}}</td>
           <td>
-            <button class="btn btn-primary m-2" [routerLink]="'edit/{{book.id}}'"><i class="fas fa-pen-to-square"></i> Edit</button>
-            <button class="btn btn-danger"><i class="fas fa-trash-can"></i> Delete</button>
+            <button class="btn btn-primary m-2" (click)="editBook(book._id)"><i class="fas fa-pen-to-square"></i> Edit</button>
+            <button class="btn btn-danger" (click)="deleteBook(book._id)"><i class="fas fa-trash-can"></i> Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
+    <div *ngIf = "deleteMsg">
+      <div class="alert alert-danger text-center">Book is Deleted</div>
+    </div>
   </div>

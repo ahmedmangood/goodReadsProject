@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Data } from '@angular/router';
+import { GetDataService } from 'src/app/services/get-data.service';
 
 @Component({
   selector: 'app-add-books',
@@ -11,17 +12,22 @@ import { Data } from '@angular/router';
 export class AddBooksComponent {
 
   title!: string;
-  authors!: string;
-  category!: string;
+  authorID!: string;
+  categoryID!: string;
   description!: string;
   // publication_date: Date | any;
   selectedFile!: File;
+
+  // Selected options
+  authors: any;
+  categories: any;
+
   showSuccessMessage: any = false;
   
   // from Validate
   addBookForm!: FormGroup;
 
-  constructor(private http: HttpClient, private fb: FormBuilder) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private dataService: GetDataService) {
 
     this.addBookForm = this.fb.group({
       title: [null, [Validators.required]], 
@@ -29,6 +35,14 @@ export class AddBooksComponent {
       category: [null, [Validators.required]], 
       description: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(100)]]
     })
+  }
+
+  ngOnInit() {
+    this.dataService.getListAuthor().subscribe(res => this.authors = res);
+    
+    this.dataService.getListCategory().subscribe(res => this.categories = res)
+    // console.log(this.categories);
+    
   }
 
   get registerForm() {
@@ -42,8 +56,8 @@ export class AddBooksComponent {
   onSubmit() {
     const formData = new FormData();
     formData.append("title", this.title)
-    formData.append("authors", this.authors)
-    formData.append("category", this.category)
+    formData.append("authorID", this.authorID.toString())
+    formData.append("categoryID", this.categoryID.toString())
     formData.append("description", this.description)
     // formData.append("publication_date", this.publication_date)
     formData.append('image', this.selectedFile)
@@ -51,9 +65,10 @@ export class AddBooksComponent {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
-
-    this.http.post(`http://localhost:4000/books`, formData, { headers: headers }).subscribe((resultData: any) => { 
-      
+    console.log(headers);
+    
+    this.dataService.addBook(formData, headers).subscribe((resultData: any) => { 
+      console.log(resultData);
     this.showSuccessMessage = true;
   })
   }
