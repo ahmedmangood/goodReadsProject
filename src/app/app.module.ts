@@ -19,6 +19,7 @@ import { SidebarComponent } from './admin/dashboard/sidebar/sidebar.component';
 import { ContentAreaComponent } from './admin/dashboard/content-area/content-area.component';
 import { BooksComponent } from './admin/books/books.component';
 import { EditBooksComponent } from './admin/books/edit-books/edit-books.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditBooksComponent } from './admin/books/edit-books/edit-books.componen
     SidebarComponent,
     ContentAreaComponent,
     BooksComponent,
-    EditBooksComponent
+    EditBooksComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

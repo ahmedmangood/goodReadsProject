@@ -1,10 +1,8 @@
 <div class="card h-100 bg-dark">
-    <a (click)="showDetails(singleBook._id)"><img [src]="singleBook.imageUrl" class="card-img-top img-thumbnail" alt="..." /></a>
+    <a (click)="showDetails(singleBook._id)"><img [src]="singleBook.imageUrl" class="card-img-top img-thumbnail"
+            alt="..." /></a>
     <div class="card-body bg-dark">
         <h5 class="card-title">{{ singleBook.title }}</h5>
         <p class="card-text">{{ singleBook.description}}</p>
-        <!-- <button class="btn btn-success">
-            details
-        </button> -->
     </div>
 </div>
