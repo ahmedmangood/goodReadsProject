@@ -10,6 +10,7 @@ import { BooksDetailsComponent } from './books-details/books-details.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { BooksComponent } from './admin/books/books.component';
 import { EditBooksComponent } from './admin/books/edit-books/edit-books.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -34,11 +35,11 @@ const routes: Routes = [
   },
   {
     path: "admin/login",
-    component:  AdminLoginComponent
+    component: AdminLoginComponent
   },
   {
     path: "admin/books",
-    component:  BooksComponent
+    component: BooksComponent
   },
   {
     path: "admin/books/add",
@@ -50,7 +51,11 @@ const routes: Routes = [
   },
   {
     path: "admin/dashboard",
-    component:  DashboardComponent
+    component: DashboardComponent
+  },
+  {
+    path: "**",
+    component: NotFoundComponent
   }
 ];
 
