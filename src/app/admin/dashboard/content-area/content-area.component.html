@@ -8,7 +8,7 @@
             <img [src]="bookData.imageUrl" alt="">
             <p class="card-text">{{bookData.title}}</p>
           </div>
-          <a [routerLink]="'/admin/books'" class="btn btn-primary">Go Books List</a>
+          <a [routerLink]="'/admin/books'" class="btn btn-outline-light px-3">Go Books List</a>
         </div>
       </div>
 </div>
@@ -22,7 +22,7 @@
           <img [src]="author.photo" alt="">
           <p class="card-text">{{author.firstName + " " + author.lastName}}</p>
         </div>
-        <a [routerLink]="'/admin/authors'" class="btn btn-primary">Go Authors List</a>
+        <a [routerLink]="'/admin/authors'" class="btn btn-outline-light px-3">Go Authors List</a>
       </div>
     </div>
 </div>
@@ -35,7 +35,7 @@
         <div class="content-box" *ngFor="let category of categories">
           <p class="card-text">{{category.name}}</p>
         </div>
-        <a [routerLink]="'/admin/categories'" class="btn btn-primary">Go Categories List</a>
+        <a [routerLink]="'/admin/categories'" class="btn btn-outline-light px-3">Go Categories List</a>
       </div>
     </div>
 </div>
