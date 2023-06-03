@@ -1,0 +1,56 @@
+.search{
+    display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 1340px;
+height: 42px;
+left: 393px;
+top: 36px;
+
+border-radius: 4px;
+    box-sizing: border-box;
+
+    /* Auto layout */
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 12px;
+    
+    width: 1340px;
+    height: 38px;
+    
+    background: #242426;
+    border: 1px solid #242426;
+    border-radius: 4px;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.book-title{
+    position: absolute;
+width: 205px;
+height: 48px;
+left: 393px;
+top: 185px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 200%;
+/* identical to box height, or 48px */
+
+display: flex;
+align-items: center;
+
+color: #C1BECB;
+
+}

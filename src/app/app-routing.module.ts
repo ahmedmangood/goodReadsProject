@@ -7,6 +7,7 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AddBooksComponent } from './admin/add-books/add-books.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ExploreComponent } from './explore/explore.component';
+import { BookPageComponent } from './book-page/book-page.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: "home",
     component: ListBooksComponent
+  },
+  {
+    path: "book",
+    component: BookPageComponent
   },
   {
     path: "signup",

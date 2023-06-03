@@ -14,6 +14,9 @@ import { AddBooksComponent } from './admin/add-books/add-books.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ExploreComponent } from './explore/explore.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { BookPageComponent } from './book-page/book-page.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { ExploreComponent } from './explore/explore.component';
     AddBooksComponent,
     AdminLoginComponent,
     HomepageComponent,
-    ExploreComponent
+    ExploreComponent,
+    SidebarComponent,
+    BookPageComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,7 @@ import { ExploreComponent } from './explore/explore.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
