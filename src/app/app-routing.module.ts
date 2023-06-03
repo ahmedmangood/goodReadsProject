@@ -16,6 +16,7 @@ import { BooksComponent } from './admin/books/books.component';
 import { EditBooksComponent } from './admin/books/edit-books/edit-books.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { authAdminGuard } from './guards/auth-admin.guard';
+import { AuthorDetailsComponent } from './author-details/author-details.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: "details/:id",
     component: BooksDetailsComponent
+  },
+  {
+    path: "author",
+    component: AuthorDetailsComponent
   },
   {
     path: "signup",

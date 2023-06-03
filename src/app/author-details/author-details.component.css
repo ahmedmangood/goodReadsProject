@@ -1,0 +1,67 @@
+.name {
+    position: absolute;
+    /* width: 128px; */
+    /* height: 29px; */
+    left: 394px;
+    top: 95px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+
+    /* identical to box height */
+
+    color: #C1BECB;
+}
+
+.bio {
+
+    position: absolute;
+    width: 876px;
+    height: 152px;
+    left: 392px;
+    top: 147px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #FFFFFF;
+}
+
+.author-img {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 1644px;
+    top: 100px;
+    border-radius: 50%;
+}
+
+h3{
+    
+position: absolute;
+width: 200px;
+height: 39px;
+left: 392px;
+top: 281px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 39px;
+
+/* identical to box height */
+
+color: #FFFFFF;
+}
+
+.bc{
+    margin-top: 22rem !important;
+    margin-left: -30px;
+}

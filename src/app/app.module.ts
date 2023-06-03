@@ -28,6 +28,8 @@ import { authAdminGuard } from './guards/auth-admin.guard';
 import { CategoryComponent } from './admin/category/category.component';
 import { AddcategoryComponent } from './admin/category/addcategory/addcategory.component';
 import { EidtcategoryComponent } from './admin/category/eidtcategory/eidtcategory.component';
+import { AuthorDetailsComponent } from './author-details/author-details.component';
+import { BookCardComponent } from './book-card/book-card.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { EidtcategoryComponent } from './admin/category/eidtcategory/eidtcategor
     NotFoundComponent,
     CategoryComponent,
     AddcategoryComponent,
-    EidtcategoryComponent
+    EidtcategoryComponent,
+    AuthorDetailsComponent,
+    BookCardComponent
   ],
   imports: [
     BrowserModule,
