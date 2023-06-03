@@ -1,6 +1,30 @@
+<app-sidebar></app-sidebar>
 <div *ngFor="let user of users;">
     <p>{{user.f_name}} {{user.l_name}}</p>
     <!-- <p>{{user.authors[0]}}</p> -->
     <img [src]="user.imageUrl" alt="">
     <p>+++++++++++++++++++++++++++++</p>
+</div>
+
+<p class="al">Authors List</p>
+
+<div class="container d-flex flex-row">
+    <div class="row" style="margin-left: 5vw">
+        <div class="card" style="width: 12rem;">
+            <img class="card-img-top" src="https://images.gr-assets.com/authors/1362814142p8/3389.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Steven King</h5>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 5vw">
+        <div class="card" style="width: 12rem;">
+            <img class="card-img-top" src="https://images.gr-assets.com/authors/1362814142p8/3389.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Steven King</h5>
+            </div>
+        </div>
+    </div>
 </div>
