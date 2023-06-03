@@ -17,6 +17,7 @@ import { EditBooksComponent } from './admin/books/edit-books/edit-books.componen
 import { NotFoundComponent } from './not-found/not-found.component';
 import { authAdminGuard } from './guards/auth-admin.guard';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
+import { ListUsersComponent } from './list-users/list-users.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: "author",
     component: AuthorDetailsComponent
+  },
+  {
+    path: "authors",
+    component: ListUsersComponent
   },
   {
     path: "signup",
