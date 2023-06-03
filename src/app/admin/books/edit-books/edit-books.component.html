@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="box">
+      <h3 class="my-5">Edit Book</h3>
+      <form
+        class="mt-5"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="editBookForm"
+        #editForm="ngForm"
+        enctype="multipart/form-data"
+      >
+        <!-- title -->
+        <div class="row mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="form3Example1">Title</label>
+              <input
+                type="text"
+                [name]="book.title"
+                [value]="book.title"
+                formControlName="title"
+                id="form3Example1"
+                [(ngModel)]="book.title"
+                class="form-control"
+                aria-describedby="fnameHelp"
+              />
+              <div id="fnameHelp" class="form-text text-danger" *ngIf="editBookForm.controls['title'].touched && editBookForm.controls['title'].invalid">
+                <span *ngIf="editBookForm.controls['title'].errors?.['required']">
+                  This Field Is Required
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- author name -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example2">AuthorID</label>
+              <input
+                type="text"
+                [name]="book.authorID._id"
+                id="form3Example2"
+                formControlName="authorID"
+                [(ngModel)]="book.authorID._id"
+                class="form-control"
+                aria-describedby="lnameHelp"
+              />
+              <div id="lnameHelp" class="form-text text-danger" *ngIf="editBookForm.controls['authorID'].touched && editBookForm.controls['authorID'].invalid">
+                <span *ngIf="editBookForm.controls['authorID'].errors?.['required']">
+                  This Field Is Required
+                </span>
+              </div>
+            </div>
+  
+        <!-- category input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">CategoryID</label>
+          <input
+            type="text"
+            [name]="book.categoryID._id"
+            id="form3Example3"
+            formControlName="categoryID"
+            [(ngModel)]="book.categoryID._id"
+            class="form-control"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text text-danger" *ngIf="editBookForm.controls['categoryID'].touched && editBookForm.controls['categoryID'].invalid">
+            <span *ngIf="editBookForm.controls['categoryID'].errors?.['required']">
+              This Field Is Required
+            </span>
+          </div>
+        </div>
+        <!-- upload image input -->
+        <div class="form-outline mb-4">
+          <input
+            type="file"
+            name="image"
+            id="form9Example4"
+            (change)="onFileSelected($event)"
+            class="form-control"
+          />
+          <label class="form-label" for="form9Example4">upload image</label>
+        </div>
+  
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">
+          edit Book
+        </button>
+      </form>
+      <div *ngIf="successMsg">
+        <div class="alert alert-success text-center">Book Updated successfully</div>
+      </div>
+    </div>
+  </div>

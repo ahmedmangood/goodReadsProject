@@ -8,10 +8,9 @@ import { GetDataService } from 'src/app/services/get-data.service';
 })
 export class ListBooksComponent {
   books!: any;
-  constructor(private getData: GetDataService) {}
+  constructor(private getData: GetDataService) { }
 
   ngOnInit() {
-    this.getData.getListBooks().subscribe((res: any) => this.books = res
-    )
+    this.getData.getListBooks().subscribe((res: any) => this.books = res)
   }
 }

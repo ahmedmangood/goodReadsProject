@@ -1,0 +1,56 @@
+
+
+
+
+
+
+<div class="container">
+    <h3 class="display-4 my-5">Books List</h3>
+    <!-- <div *ngIf = "deleteMsg">
+      <div class="alert alert-danger text-center">CAtegory is Deleted</div>
+    </div> -->
+    <button class="btn btn-success mb-3" [routerLink]="'add'"><i class="fas fa-plus"></i> Add Category</button>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#ID</th>
+          <th scope="col">name</th>
+          <th scope="col">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories">
+            <td>{{category._id}}</td>
+          
+            <td>{{category.name}}</td>
+         
+          <td>
+            <!-- <button class="btn btn-primary m-2" (click)="editBook(category._id)"><i class="fas fa-pen-to-square"></i> Edit</button>
+            <button class="btn btn-danger" (click)="deleteBook(category._id)"><i class="fas fa-trash-can"></i> Delete</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<!-- 
+<div class="container border-start border-light">
+    <div class="row mx-auto">
+        <div class="col-md-12 ">
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 " >
+                    <div class="col " *ngFor="let category of categories">
+                      <div class="card bg-dark ">
+                        <div class="card-body text-center">
+                          <h5 class="card-title text-light "> {{ category.name }}</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a class="btn btn-info col-md-12 m-5 mx-auto" [routerLink]="'addcategory'" >Add Category</a>
+        </div>
+    </div>
+  
+    
+</div> -->

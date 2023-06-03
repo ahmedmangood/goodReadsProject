@@ -1,0 +1,16 @@
+a {
+    margin: 10px auto;
+    cursor: pointer;
+}
+img {
+    height: 240px;
+    width: 270px;
+}
+.img-thumbnail {
+    background-color: rgb(33, 37, 41);
+    border-color: #373c41;
+}
+.card {
+    color: white;
+    text-align: center;
+}

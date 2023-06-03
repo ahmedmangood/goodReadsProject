@@ -29,16 +29,11 @@
           </div>
           <!-- last name -->
             <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example2">Authors</label>
-              <input
-                type="text"
-                [name]="authors"
-                id="form3Example2"
-                formControlName="authors"
-                [(ngModel)]="authors"
-                class="form-control"
-                aria-describedby="lnameHelp"
-              />
+              <label class="form-label" for="form3Example2">Author ID</label>
+              <select class="form-select" aria-label="Default select example" name="author.id" id="author" formControlName="authors" [(ngModel)]="authorID">
+                <option *ngFor="let author of authors" [value]="author.id">{{author.firstName + " " + author.lastName}}</option>
+              </select>
+
               <div id="lnameHelp" class="form-text text-danger" *ngIf="addBookForm.controls['authors'].touched && addBookForm.controls['authors'].invalid">
                 <span *ngIf="addBookForm.controls['authors'].errors?.['required']">
                   This Field Is Required
@@ -46,62 +41,19 @@
               </div>
             </div>
   
-        <!-- Email input -->
+        <!-- category input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="form3Example3">Category</label>
-          <input
-            type="text"
-            [name]="category"
-            id="form3Example3"
-            formControlName="category"
-            [(ngModel)]="category"
-            class="form-control"
-            aria-describedby="emailHelp"
-          />
+          <select class="form-select" aria-label="Default select example" name="category._id" id="category" formControlName="category" [(ngModel)]="categoryID">
+            <option *ngFor="let category of categories" [value]="category._id">{{category.name}}</option>
+          </select>
+          
           <div id="emailHelp" class="form-text text-danger" *ngIf="addBookForm.controls['category'].touched && addBookForm.controls['category'].invalid">
             <span *ngIf="addBookForm.controls['category'].errors?.['required']">
               This Field Is Required
             </span>
           </div>
         </div>
-  
-        <!-- Password input -->
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example4">Description</label>
-          <input
-            type="text"
-            [name]="description"
-            formControlName="description"
-            id="form3Example4"
-            [(ngModel)]="description"
-            class="form-control"
-            aria-describedby="passwordHelp"
-          />
-          <div id="passwordHelp" class="form-text text-danger" *ngIf="addBookForm.controls['description'].touched && addBookForm.controls['description'].invalid">
-            <span *ngIf="addBookForm.controls['description'].errors?.['required']">
-              This Field Is Required
-            </span>
-            <span *ngIf="addBookForm.controls['description'].errors?.['minlength']">
-              Less Than 5 Characters 
-            </span>
-            <span *ngIf="addBookForm.controls['description'].errors?.['maxlength']">
-                More Than 100 Characters
-            </span>
-          </div>
-        </div>
-<!--         
-         upload image input
-        <label class="form-label" for="form9Example4">Select Date</label>
-        <div class="form-outline mb-4">
-            <input
-              type="date"
-              [name]="publication_date"
-              id="form9Example4"
-              class="form-control"
-            />
-          </div> -->
-
-
         <!-- upload image input -->
         <div class="form-outline mb-4">
           <input

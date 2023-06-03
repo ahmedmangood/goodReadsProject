@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,13 +10,24 @@ import { LoginComponent } from './register/login/login.component';
 import { ListBooksComponent } from './list-books/list-books/list-books.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardsComponent } from './list-books/cards/cards.component';
-import { AddBooksComponent } from './admin/add-books/add-books.component';
+import { AddBooksComponent } from './admin/books/add-books/add-books.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ExploreComponent } from './explore/explore.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BookPageComponent } from './book-page/book-page.component';
 import { MatIconModule } from '@angular/material/icon';
+import { BooksDetailsComponent } from './books-details/books-details.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { ContentAreaComponent } from './admin/dashboard/content-area/content-area.component';
+import { BooksComponent } from './admin/books/books.component';
+import { EditBooksComponent } from './admin/books/edit-books/edit-books.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthService } from './services/auth.service';
+import { authAdminGuard } from './guards/auth-admin.guard';
+import { CategoryComponent } from './admin/category/category.component';
+import { AddcategoryComponent } from './admin/category/addcategory/addcategory.component';
+import { EidtcategoryComponent } from './admin/category/eidtcategory/eidtcategory.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +43,17 @@ import { MatIconModule } from '@angular/material/icon';
     HomepageComponent,
     ExploreComponent,
     SidebarComponent,
-    BookPageComponent
+    BookPageComponent,
+    BooksDetailsComponent,
+    DashboardComponent,
+    SidebarComponent,
+    ContentAreaComponent,
+    BooksComponent,
+    EditBooksComponent,
+    NotFoundComponent,
+    CategoryComponent,
+    AddcategoryComponent,
+    EidtcategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +63,7 @@ import { MatIconModule } from '@angular/material/icon';
     HttpClientModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [AuthService, authAdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
