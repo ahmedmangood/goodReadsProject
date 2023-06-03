@@ -1,0 +1,15 @@
+img {
+    width: 150px;
+    height: 215px;
+    margin-top: 1rem;
+}
+
+.card {
+    width: 19.5rem !important;
+    height: 20.5rem;
+    text-align: center;
+    align-items: center;
+    background-color: #202021;
+    color: #C1BECB;
+    display:inline-block;
+}
