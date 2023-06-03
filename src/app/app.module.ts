@@ -32,6 +32,8 @@ import { AuthorsComponent } from './admin/authors/authors.component';
 import { AddAuthorsComponent } from './admin/authors/add-authors/add-authors.component';
 import { EditAuthorsComponent } from './admin/authors/edit-authors/edit-authors.component';
 import { SidebarAdminComponent } from './admin/dashboard/sidebar-admin/sidebar-admin.component';
+import { AuthorDetailsComponent } from './author-details/author-details.component';
+import { BookCardComponent } from './book-card/book-card.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,14 @@ import { SidebarAdminComponent } from './admin/dashboard/sidebar-admin/sidebar-a
     NotFoundComponent,
     CategoryComponent,
     AddcategoryComponent,
-    EidtcategoryComponent
+    EidtcategoryComponent,
+    AuthorsComponent,
+    AddAuthorsComponent,
+    EditAuthorsComponent,
+    SidebarAdminComponent,
+    AuthorDetailsComponent,
+    BookCardComponent
+
   ],
   imports: [
     BrowserModule,
