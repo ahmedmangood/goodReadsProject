@@ -8,6 +8,8 @@ import { SignupComponent } from './register/signup/signup.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AddBooksComponent } from './admin/books/add-books/add-books.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ExploreComponent } from './explore/explore.component';
+import { BookPageComponent } from './book-page/book-page.component';
 import { BooksDetailsComponent } from './books-details/books-details.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { BooksComponent } from './admin/books/books.component';
@@ -19,6 +21,18 @@ const routes: Routes = [
   {
     path: "",
     component: HomepageComponent
+  },
+  {
+    path: "explore",
+    component: ExploreComponent
+  },
+  {
+    path: "home",
+    component: ListBooksComponent
+  },
+  {
+    path: "book",
+    component: BookPageComponent
   },
   {
     path: "list-books",
