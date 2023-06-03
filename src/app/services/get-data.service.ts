@@ -14,6 +14,19 @@ export class GetDataService {
   getListAuthor() {
         return this.http.get('http://localhost:4000/author');
       }
+  getAuthorById(id: any) {
+        return this.http.get(`http://localhost:4000/author/${id}`);
+      }
+  addAuthor(body: any, headers: any) {
+        return this.http.post('http://localhost:4000/author', body, { headers });
+      }
+  updateAuthor(body: any, id: any, headers: any) {
+        return this.http.put(`http://localhost:4000/author/${id}`, body, { headers });
+      }
+  deleteAuthorById(id: any) {
+        return this.http.delete(`http://localhost:4000/author/${id}`);
+      }
+      // Cateories Apis
   getListCategory() {
         return this.http.get('http://localhost:4000/category');
       }
@@ -26,19 +39,20 @@ export class GetDataService {
       })
     )
   }
+  // Books Apis
   getListBooks() {
     return this.http.get('http://localhost:4000/books');
   }
   getBookByid(id: any) {
     return this.http.get(`http://localhost:4000/books/${id}`);
   }
-  addBook(body: any, headers: any) {
-    return this.http.post(`http://localhost:4000/books`, body, {headers});
+  addBooks(body: any, headers: any) {
+    return this.http.post('http://localhost:4000/books', body, headers)
   }
   updateBook(book: any, id: any, headers: any) {
-    return this.http.put(`http://localhost:4000/books/${id}`, book, {headers});
+    return this.http.put(`http://localhost:4000/books/${id}`, book, { headers });
   }
   deleteBook(id: any) {
-    return this.http.delete(`http://localhost:4000س/books/${id}`);
+    return this.http.delete(`http://localhost:4000/books/${id}`);
   }
 }

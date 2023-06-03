@@ -1,0 +1,15 @@
+table {
+    color: #eee;
+    border-color: #eee;
+    text-align: center;
+}
+img {
+    width: 100px;
+    height: 100px;
+}
+.btn-primary,.btn-danger {
+    padding: 5px;
+}
+h3 {
+    color: #4d4d4d;
+}

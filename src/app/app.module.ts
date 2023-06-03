@@ -28,6 +28,10 @@ import { authAdminGuard } from './guards/auth-admin.guard';
 import { CategoryComponent } from './admin/category/category.component';
 import { AddcategoryComponent } from './admin/category/addcategory/addcategory.component';
 import { EidtcategoryComponent } from './admin/category/eidtcategory/eidtcategory.component';
+import { AuthorsComponent } from './admin/authors/authors.component';
+import { AddAuthorsComponent } from './admin/authors/add-authors/add-authors.component';
+import { EditAuthorsComponent } from './admin/authors/edit-authors/edit-authors.component';
+import { SidebarAdminComponent } from './admin/dashboard/sidebar-admin/sidebar-admin.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +57,11 @@ import { EidtcategoryComponent } from './admin/category/eidtcategory/eidtcategor
     NotFoundComponent,
     CategoryComponent,
     AddcategoryComponent,
-    EidtcategoryComponent
+    EidtcategoryComponent,
+    AuthorsComponent,
+    AddAuthorsComponent,
+    EditAuthorsComponent,
+    SidebarAdminComponent
   ],
   imports: [
     BrowserModule,

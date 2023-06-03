@@ -6,6 +6,7 @@
         (ngSubmit)="onSubmit()"
         [formGroup]="addBookForm"
         #registerForm="ngForm"
+        enctype="multipart/form-data"
       >
         <!-- 2 column grid layout with text inputs for the first and last names -->
         <div class="row mb-4">
@@ -60,7 +61,6 @@
             type="file"
             name="image"
             id="form9Example4"
-            (change)="onFileSelect($event)"
             (change)="onFileSelect($event)"
             class="form-control"
           />

@@ -16,6 +16,9 @@ import { BooksComponent } from './admin/books/books.component';
 import { EditBooksComponent } from './admin/books/edit-books/edit-books.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { authAdminGuard } from './guards/auth-admin.guard';
+import { AuthorsComponent } from './admin/authors/authors.component';
+import { AddAuthorsComponent } from './admin/authors/add-authors/add-authors.component';
+import { EditAuthorsComponent } from './admin/authors/edit-authors/edit-authors.component';
 
 const routes: Routes = [
   {
@@ -52,39 +55,53 @@ const routes: Routes = [
   },
   {
     path: "admin/login", component: AdminLoginComponent,
-    // canActivate: [authAdminGuard]
+    canActivate: [authAdminGuard]
   },
   {
     path: "admin/books",
     component: BooksComponent,
-    // canActivate: [authAdminGuard]
+    canActivate: [authAdminGuard]
   },
   {
     path: "admin/books/add",
     component: AddBooksComponent,
-    // canActivate: [authAdminGuard]
+    canActivate: [authAdminGuard]
   },
   {
     path: "admin/books/edit/:id",
     component: EditBooksComponent,
-    // canActivate: [authAdminGuard]
+    canActivate: [authAdminGuard]
   },
   {
     path: "admin/dashboard",
     component: DashboardComponent,
-    // canActivate: [authAdminGuard]
+    canActivate: [authAdminGuard]
   },
   {
     path: "admin/category",
     component: CategoryComponent,
-    // canActivate: [authAdminGuard]
+    canActivate: [authAdminGuard]
   },
   {
     path: "admin/category/add",
     component: AddcategoryComponent,
-    // canActivate: [authAdminGuard]
+    canActivate: [authAdminGuard]
   },
-  
+  {
+    path: "admin/authors",
+    component: AuthorsComponent,
+    canActivate: [authAdminGuard]
+  },
+  {
+    path: "admin/authors/add",
+    component: AddAuthorsComponent,
+    canActivate: [authAdminGuard]
+  },
+  {
+    path: "admin/authors/edit/:id",
+    component: EditAuthorsComponent,
+    canActivate: [authAdminGuard]
+  },
   {
     path: "**",
     component: NotFoundComponent

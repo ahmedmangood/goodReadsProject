@@ -27,16 +27,25 @@ export class AddcategoryComponent {
   }
 
   onSubmit() {
+    
     console.log(this.name);
 
     const token = localStorage.getItem('token');
+    
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    
     headers.append('Content-Type', 'multipart/form-data');
+    
     headers.append('Accept', 'application/json')
+    
     const options = { headers }
-      this.postCategory.addCategory({name: this.name}, options).subscribe(resultData => { 
-      console.log(resultData);
+      
+    this.postCategory.addCategory({name: this.name}, options).subscribe(resultData => { 
+      
+        console.log(resultData);
+      
       this.showSuccessMessage = true;
+
       setTimeout(() => {
         this.router.navigate(['/admin/categories']);
       }, 3000);
