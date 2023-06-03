@@ -54,7 +54,6 @@ export class AddBooksComponent {
     formData.append("title", this.title)
     formData.append("authorID", this.authorID.toString())
     formData.append("categoryID", this.categoryID.toString())
-    // formData.append("publication_date", this.publication_date)
     formData.append('image', this.selectedFile)
 
     const headers = new HttpHeaders();

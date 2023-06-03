@@ -1,6 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GetDataService } from 'src/app/services/get-data.service';
+import { catchError } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addcategory',
@@ -13,30 +16,30 @@ export class AddcategoryComponent {
   showSuccessMessage= false;
   addCatForm: FormGroup;
  
-  constructor(private http: HttpClient ,private fb: FormBuilder) {
+  constructor(private router: Router ,private fb: FormBuilder, private postCategory: GetDataService) {
     this.addCatForm = this.fb.group({
-      name: [null, [Validators.required]], 
-   
-    })
-   }
+      name: [null, [Validators.required]]}
+      )
+    }
+
    get categoryForm() {
     return this.addCatForm.controls;
   }
 
-
   onSubmit() {
-    const formData = new FormData();
-    formData.append("name", this.name)
-  
-   
+    console.log(this.name);
 
-    // const headers = new HttpHeaders();
-    // headers.append('Content-Type', 'multipart/form-data');
-    // headers.append('Accept', 'application/json')
-
-    this.http.post(`http://localhost:33400/category`, formData).subscribe((resultData: any) => { 
-      
-    this.showSuccessMessage = true;
-  })
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json')
+    const options = { headers }
+      this.postCategory.addCategory({name: this.name}, options).subscribe(resultData => { 
+      console.log(resultData);
+      this.showSuccessMessage = true;
+      setTimeout(() => {
+        this.router.navigate(['/admin/categories']);
+      }, 3000);
+    })
   }
 }

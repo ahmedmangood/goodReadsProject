@@ -20,15 +20,15 @@
                 class="form-control"
                 aria-describedby="fnameHelp"
               />
-              <div id="fnameHelp" class="form-text text-danger" *ngIf="addCatForm.controls['name'].touched && addCatForm.controls['name'].invalid">
+              <!-- <div id="fnameHelp" class="form-text text-danger" *ngIf="addCatForm.controls['name'].touched && addCatForm.controls['name'].invalid">
                 <span *ngIf="addCatForm.controls['name'].errors?.['required']">
                   This Field Is Required
                 </span>
-              </div>
+              </div> -->
     
   
         <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="addCatForm.invalid">
+        <button type="submit" class="btn btn-primary btn-block mb-4">
           Add Category
         </button>
         </div>
