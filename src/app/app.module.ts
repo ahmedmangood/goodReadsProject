@@ -57,11 +57,7 @@ import { SidebarAdminComponent } from './admin/dashboard/sidebar-admin/sidebar-a
     NotFoundComponent,
     CategoryComponent,
     AddcategoryComponent,
-    EidtcategoryComponent,
-    AuthorsComponent,
-    AddAuthorsComponent,
-    EditAuthorsComponent,
-    SidebarAdminComponent
+    EidtcategoryComponent
   ],
   imports: [
     BrowserModule,

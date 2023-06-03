@@ -19,6 +19,8 @@ import { authAdminGuard } from './guards/auth-admin.guard';
 import { AuthorsComponent } from './admin/authors/authors.component';
 import { AddAuthorsComponent } from './admin/authors/add-authors/add-authors.component';
 import { EditAuthorsComponent } from './admin/authors/edit-authors/edit-authors.component';
+import { AuthorDetailsComponent } from './author-details/author-details.component';
+import { ListUsersComponent } from './list-users/list-users.component';
 
 const routes: Routes = [
   {
@@ -44,6 +46,14 @@ const routes: Routes = [
   {
     path: "details/:id",
     component: BooksDetailsComponent
+  },
+  {
+    path: "author",
+    component: AuthorDetailsComponent
+  },
+  {
+    path: "authors",
+    component: ListUsersComponent
   },
   {
     path: "signup",

@@ -1,0 +1,35 @@
+.card{
+    background-color: #131314;
+    color: antiquewhite;
+    border: 0.7px solid #83818A;
+    align-items: center;
+}
+
+img{
+    max-width: 100%;
+    align-items: center;
+}
+
+.row{
+    margin-top: 200px;
+}
+
+.al{
+
+position: absolute;
+
+left: 397px;
+top: 93px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 200%;
+
+/* identical to box height, or 48px */
+display: flex;
+align-items: center;
+
+color: #C1BECB;
+}
