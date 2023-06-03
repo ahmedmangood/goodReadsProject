@@ -37,7 +37,8 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: "admin/login", component: AdminLoginComponent, canActivate: [authAdminGuard]
+    path: "admin/login", component: AdminLoginComponent,
+    // canActivate: [authAdminGuard]
   },
   {
     path: "admin/books",
@@ -46,27 +47,27 @@ const routes: Routes = [
   },
   {
     path: "admin/books/add",
-    component: AddBooksComponent
+    component: AddBooksComponent,
     // canActivate: [authAdminGuard]
   },
   {
     path: "admin/books/edit/:id",
-    component: EditBooksComponent
+    component: EditBooksComponent,
     // canActivate: [authAdminGuard]
   },
   {
     path: "admin/dashboard",
-    component: DashboardComponent
+    component: DashboardComponent,
     // canActivate: [authAdminGuard]
   },
   {
     path: "admin/category",
-    component: CategoryComponent
+    component: CategoryComponent,
     // canActivate: [authAdminGuard]
   },
   {
     path: "admin/category/add",
-    component: AddcategoryComponent
+    component: AddcategoryComponent,
     // canActivate: [authAdminGuard]
   },
   
