@@ -1,0 +1,21 @@
+
+<div class="list-books">
+    <div class="container my-5">
+        <h4 class="display-4 mb-5">Category Collection</h4>
+        <div *ngIf="emptyMsg">
+            <span class="alert alert-info">This Category is Empty</span>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let book of books">
+                <div class="card h-100 bg-dark">
+                    <a><img [src]="book.imageUrl" class="card-img-top img-thumbnail"
+                            alt="..." /></a>
+                    <div class="card-body bg-dark">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <p class="card-text">{{ book.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

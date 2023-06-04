@@ -1,0 +1,11 @@
+h5 {
+    cursor: pointer;
+}
+.img-thumbnail {
+    background-color: rgb(33, 37, 41);
+    border-color: #373c41;
+}
+.card {
+    color: white;
+    text-align: center;
+}
