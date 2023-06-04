@@ -1,0 +1,19 @@
+
+.navbar{
+    background:transparent;
+}
+
+a{
+    color: #E0E0E0;
+    font-size: 1.2rem;
+}
+
+a:hover {
+    color: rgb(170, 170, 170);
+  }
+
+.logo{
+    color: #E0E0E0;
+    font-size: 1.8rem;
+    padding-left: 1vw;
+}

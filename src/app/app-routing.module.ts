@@ -21,6 +21,7 @@ import { AddAuthorsComponent } from './admin/authors/add-authors/add-authors.com
 import { EditAuthorsComponent } from './admin/authors/edit-authors/edit-authors.component';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { ListUsersComponent } from './list-users/list-users.component';
+import { EidtcategoryComponent } from './admin/category/eidtcategory/eidtcategory.component';
 
 const routes: Routes = [
   {
@@ -95,6 +96,11 @@ const routes: Routes = [
   {
     path: "admin/category/add",
     component: AddcategoryComponent,
+    canActivate: [authAdminGuard]
+  },
+  {
+    path: "admin/category/edit/:id",
+    component: EidtcategoryComponent,
     canActivate: [authAdminGuard]
   },
   {

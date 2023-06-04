@@ -34,6 +34,7 @@ import { EditAuthorsComponent } from './admin/authors/edit-authors/edit-authors.
 import { SidebarAdminComponent } from './admin/dashboard/sidebar-admin/sidebar-admin.component';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { BookCardComponent } from './book-card/book-card.component';
+import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { BookCardComponent } from './book-card/book-card.component';
     EditAuthorsComponent,
     SidebarAdminComponent,
     AuthorDetailsComponent,
-    BookCardComponent
+    BookCardComponent,
+    AdminNavbarComponent
 
   ],
   imports: [

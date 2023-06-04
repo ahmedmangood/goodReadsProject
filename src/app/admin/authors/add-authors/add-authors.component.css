@@ -1,5 +1,9 @@
+.container {
+    margin: 90px auto;
+}
 .box {
-    background-image: url("https://img.freepik.com/free-photo/arrangement-with-books-dark-background_23-2148898276.jpg");
+    background-color: #292727;
+    padding: 25px;
 }
 h2,h3 {
     color: #eeeeeeb8;
@@ -7,6 +11,7 @@ h2,h3 {
 form {
     color: #eeeeeeb8;
     width: 400px;
+    padding: 25px;
 }
 input {
     background-color: #ffffff1c;

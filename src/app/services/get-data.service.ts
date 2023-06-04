@@ -26,10 +26,19 @@ export class GetDataService {
   deleteAuthorById(id: any) {
         return this.http.delete(`http://localhost:4000/author/${id}`);
       }
-      // Cateories Apis
+  // Cateories Apis
   getListCategory() {
         return this.http.get('http://localhost:4000/category');
       }
+  getCategoryByid(id: any) {
+    return this.http.get(`http://localhost:4000/category/${id}`);
+  }
+  updateCategory(body: any, id: any, options: any) {
+    return this.http.put(`http://localhost:4000/category/${id}`, body,  options );
+  }
+  deleteCategoryById(id: any) {
+    return this.http.delete(`http://localhost:4000/category/${id}`);
+  }
   addCategory(body: any, options: {headers: HttpHeaders}): Observable<any>{
     return this.http.post('http://localhost:4000/category', body, options)
     .pipe(

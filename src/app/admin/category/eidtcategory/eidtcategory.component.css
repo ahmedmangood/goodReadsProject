@@ -1,0 +1,58 @@
+.container {
+    margin: 90px auto;
+}
+.box {
+    background-color: #292727;
+    padding: 25px;
+    border-radius: 10px;
+}
+h2,h3 {
+    color: #eeeeeeb8;
+}
+form {
+    color: #eeeeeeb8;
+    width: 400px;
+}
+input {
+    background-color: #ffffff1c;
+    color: #eeeeeeb8;
+}
+input:focus {
+    background-color: #ffffff1c;
+    outline-color: #eeeeeeb8 !important;
+    outline-style: solid;
+    color: #eeeeeeb8;
+    border-color: #3d3d3d;
+}
+select{
+    background-color: #ffffff1c;
+    color: #eeeeeeb8;
+}
+option {
+    background-color: #000;
+    color: #eeeeeeb8
+}
+
+button {
+    border: 1px solid #eee;
+    background-color: #292727;
+    width: 130px;
+}
+button:hover {
+    background-color: #000;
+    border: 1px solid #eee;
+}
+.btn:disabled, .btn.disabled, fieldset:disabled .btn {
+    background-color: #292727;
+    border: 1px solid #eee;
+}
+a {
+    color:#ced4da;
+    padding-left: 20px;
+}
+.none {
+    display: none;
+}
+.success {
+    display: block;
+}

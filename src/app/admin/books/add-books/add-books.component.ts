@@ -61,13 +61,13 @@ export class AddBooksComponent {
     headers.set('Authorization', `Bearer ${token}`)
     headers.set('Content-Type', 'multipart/form-data');
     headers.set('Accept', 'application/json')
-    console.log(headers);
     
     this.dataService.addBooks(formData, {headers}).subscribe((resultData: any) => { 
-    this.showSuccessMessage = true;
-    setTimeout(() => {
-      this.router.navigate(['/admin/books']);
-    }, 3000);
+    
+      this.showSuccessMessage = true;
+      setTimeout(() => {
+        this.router.navigate(['/admin/books']);
+      }, 3000);
   })
   }
 
