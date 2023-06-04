@@ -1,0 +1,95 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+    <div class="box">
+      <h3 class="my-5">Edit Author</h3>
+      <form
+        class="mt-5"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="editAuthorForm"
+        #editForm="ngForm"
+        enctype="multipart/form-data"
+      >
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="form3Example1">FirstName</label>
+              <input
+                type="text"
+                [name]="author.firstName"
+                formControlName="firstName"
+                id="form3Example1"
+                [(ngModel)]="author.firstName"
+                class="form-control"
+                aria-describedby="fnameHelp"
+              />
+              <div id="fnameHelp" class="form-text text-danger" *ngIf="editAuthorForm.controls['firstName'].touched && editAuthorForm.controls['firstName'].invalid">
+                <span *ngIf="editAuthorForm.controls['firstName'].errors?.['required']">
+                  This Field Is Required
+                </span>
+              </div>
+            </div>
+          </div>
+        <!-- lastname -->
+        <div class="row mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="form3Example1">LastName</label>
+              <input
+                type="text"
+                [name]="author.lastName"
+                formControlName="lastName"
+                id="form3Example1"
+                [(ngModel)]="author.lastName"
+                class="form-control"
+                aria-describedby="fnameHelp"
+              />
+              
+            <div id="fnameHelp" class="form-text text-danger" *ngIf="editAuthorForm.controls['lastName'].touched && editAuthorForm.controls['lastName'].invalid">
+                <span *ngIf="editAuthorForm.controls['lastName'].errors?.['required']">
+                  This Field Is Required
+                </span>
+              </div>
+            </div>
+          </div>
+        <!-- Select Date Of Birth input -->
+        <div class="form-outline mb-4">
+            <div class="form-outline">
+            <label class="form-label" for="form9Example4">Date Of Birth</label>
+            <input
+                type="date"
+                [name]="author.dateOfBirth"
+                formControlName="dateOfBirth"
+                id="form3Example1"
+                [(ngModel)]="author.dateOfBirth"
+                id="dateof"
+                class="form-control"
+            />
+            <div id="dateof" class="form-text text-danger" *ngIf="editAuthorForm.controls['dateOfBirth'].touched && editAuthorForm.controls['dateOfBirth'].invalid">
+                <span *ngIf="editAuthorForm.controls['dateOfBirth'].errors?.['required']">
+                  This Field Is Required
+                </span>
+              </div>
+            </div>
+        </div>
+        <!-- upload image input -->
+        <div class="form-outline mb-4">
+          <input
+            type="file"
+            name="authorPhoto"
+            id="form9Example4"
+            (change)="onFileSelected($event)"
+            class="form-control"
+          />
+          <label class="form-label" for="form9Example4">upload image</label>
+        </div>
+  
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="editAuthorForm.invalid">
+          Add Author
+        </button>
+      </form>
+      <div *ngIf="successMsg">
+        <div class="alert alert-success text-center">Author Updated successfully</div>
+      </div>
+    </div>
+  </div>
+  

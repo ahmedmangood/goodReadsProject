@@ -1,0 +1,33 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+    <h3 class="display-4 my-5">Authors List</h3>
+    <div *ngIf = "deleteMsg">
+      <div class="alert alert-danger text-center">Book is Deleted</div>
+    </div>
+    <button class="btn btn-success mb-3" [routerLink]="'add'"><i class="fas fa-plus"></i> Add Book</button>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#ID</th>
+          <th scope="col">Image</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Date of Birth</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let author of arrAuthorsList">
+            <td>{{author.id}}</td>
+            <td><img [src]="author.photo" alt=""></td>
+            <td>{{author.firstName}}</td>
+            <td>{{author.lastName}}</td>
+            <td>{{author.dateOfBirth}}</td>
+          <td>
+            <button class="btn btn-primary m-2" (click)="editAuthor(author.id)"><i class="fas fa-pen-to-square"></i> Edit</button>
+            <button class="btn btn-danger" (click)="deleteAuthor(author.id)"><i class="fas fa-trash-can"></i> Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

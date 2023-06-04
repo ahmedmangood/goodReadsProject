@@ -1,3 +1,4 @@
+<app-admin-navbar></app-admin-navbar>
 <div class="container">
     <div class="box">
       <h3 class="my-5">Add Category</h3>
@@ -20,13 +21,7 @@
                 class="form-control"
                 aria-describedby="fnameHelp"
               />
-              <!-- <div id="fnameHelp" class="form-text text-danger" *ngIf="addCatForm.controls['name'].touched && addCatForm.controls['name'].invalid">
-                <span *ngIf="addCatForm.controls['name'].errors?.['required']">
-                  This Field Is Required
-                </span>
-              </div> -->
-    
-  
+              
         <!-- Submit button -->
         <button type="submit" class="btn btn-primary btn-block mb-4">
           Add Category
@@ -39,42 +34,4 @@
       </div>
     </div>
   </div>
-  
-
-
-
-<!-- 
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-                       
-            <form 
-            (ngSubmit)="onSubmit()"
-            [formGroup]="addCatForm"
-            #categoryForm="ngForm"
-            >
-               
-                <input
-                type="text"
-                [name]="name"
-                formControlName="name"
-                id="form3Example1"
-                [(ngModel)]="name"
-                class="form-control"
-                aria-describedby="fnameHelp"
-              />
-              <div id="fnameHelp" class="form-text text-danger" *ngIf="addCatForm.controls['name'].touched && addCatForm.controls['name'].invalid">
-                <span *ngIf="addCatForm.controls['name'].errors?.['required']">
-                  This Field Is Required
-                </span>
-              </div>
-            
-                <button type="submit" [disabled]="addCatForm.invalid">Add Category</button>
-            </form>
-            
-        </div>
-    </div>
-</div> -->
 

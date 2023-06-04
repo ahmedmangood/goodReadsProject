@@ -1,1 +1,36 @@
-<p>eidtcategory works!</p>
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+    <div class="box">
+      <h3 class="my-5">Edit Category</h3>
+      <form
+        class="mt-5"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="editCatForm"
+        #editForm="ngForm"
+      >
+        <div class="row mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="form3Example1">Name</label>
+              <input
+                type="text"
+                [name]="oldName.name"
+                formControlName="name"
+                id="form3Example1"
+                [(ngModel)]="oldName.name"
+                class="form-control"
+                aria-describedby="fnameHelp"
+              />
+              
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block m-4">
+          Edit Category
+        </button>
+        </div>
+        </div>
+      </form>
+      <div *ngIf="showSuccessMessage">
+        <div class="alert alert-success text-center">Category Updated successfully</div>
+      </div>
+    </div>
+  </div>
+

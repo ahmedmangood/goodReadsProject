@@ -4,7 +4,6 @@
 .box {
     background-color: #292727;
     padding: 25px;
-    border-radius: 10px;
 }
 h2,h3 {
     color: #eeeeeeb8;
@@ -12,6 +11,7 @@ h2,h3 {
 form {
     color: #eeeeeeb8;
     width: 400px;
+    padding: 25px;
 }
 input {
     background-color: #ffffff1c;

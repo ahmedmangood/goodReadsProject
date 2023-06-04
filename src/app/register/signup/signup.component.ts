@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +20,7 @@ export class SignupComponent {
   // from Validate
   signupForm!: FormGroup;
 
-  constructor(private http: HttpClient, private fb: FormBuilder) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private router: Router) {
 
     this.signupForm = this.fb.group({
       f_name: [null, [Validators.required]], 
@@ -52,6 +53,9 @@ export class SignupComponent {
     this.http.post(`http://localhost:4000/register`, formData, { headers: headers }).subscribe((resultData: any) => { 
       
     this.showSuccessMessage = true;
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+    }, 3000);
   })
   }
 }

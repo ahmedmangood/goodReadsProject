@@ -28,8 +28,13 @@ import { authAdminGuard } from './guards/auth-admin.guard';
 import { CategoryComponent } from './admin/category/category.component';
 import { AddcategoryComponent } from './admin/category/addcategory/addcategory.component';
 import { EidtcategoryComponent } from './admin/category/eidtcategory/eidtcategory.component';
+import { AuthorsComponent } from './admin/authors/authors.component';
+import { AddAuthorsComponent } from './admin/authors/add-authors/add-authors.component';
+import { EditAuthorsComponent } from './admin/authors/edit-authors/edit-authors.component';
+import { SidebarAdminComponent } from './admin/dashboard/sidebar-admin/sidebar-admin.component';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { BookCardComponent } from './book-card/book-card.component';
+import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -56,8 +61,14 @@ import { BookCardComponent } from './book-card/book-card.component';
     CategoryComponent,
     AddcategoryComponent,
     EidtcategoryComponent,
+    AuthorsComponent,
+    AddAuthorsComponent,
+    EditAuthorsComponent,
+    SidebarAdminComponent,
     AuthorDetailsComponent,
-    BookCardComponent
+    BookCardComponent,
+    AdminNavbarComponent
+
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { GetDataService } from 'src/app/services/get-data.service';
 })
 export class AddBooksComponent {
 
+
   title!: string;
   authorID!: string;
   categoryID!: string;
@@ -55,18 +56,20 @@ export class AddBooksComponent {
     formData.append("authorID", this.authorID.toString())
     formData.append("categoryID", this.categoryID.toString())
     formData.append('image', this.selectedFile)
-
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'multipart/form-data');
-    headers.append('Accept', 'application/json')
-    console.log(headers);
+    const token = localStorage.getItem('token')
+    let headers = new HttpHeaders();
+    headers.set('Authorization', `Bearer ${token}`)
+    headers.set('Content-Type', 'multipart/form-data');
+    headers.set('Accept', 'application/json')
     
-    this.dataService.addBook(formData, headers).subscribe((resultData: any) => { 
-    this.showSuccessMessage = true;
-    setTimeout(() => {
-      this.router.navigate(['/admin/books']);
-    }, 3000);
+    this.dataService.addBooks(formData, {headers}).subscribe((resultData: any) => { 
+    
+      this.showSuccessMessage = true;
+      setTimeout(() => {
+        this.router.navigate(['/admin/books']);
+      }, 3000);
   })
   }
+
 
 }
