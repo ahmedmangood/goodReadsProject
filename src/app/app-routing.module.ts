@@ -22,6 +22,8 @@ import { EditAuthorsComponent } from './admin/authors/edit-authors/edit-authors.
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { EidtcategoryComponent } from './admin/category/eidtcategory/eidtcategory.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { CategoryCollectionComponent } from './categories/category-collection/category-collection.component';
 
 const routes: Routes = [
   {
@@ -41,19 +43,23 @@ const routes: Routes = [
     component: BookPageComponent
   },
   {
-    path: "list-books",
-    component: ListBooksComponent
-  },
-  {
     path: "details/:id",
     component: BooksDetailsComponent
+  },
+  {
+    path: "categories",
+    component: CategoriesComponent
+  },
+  {
+    path: "categories/:id",
+    component: CategoryCollectionComponent
   },
   {
     path: "author",
     component: AuthorDetailsComponent
   },
   {
-    path: "authors",
+    path: "allauthors",
     component: ListUsersComponent
   },
   {

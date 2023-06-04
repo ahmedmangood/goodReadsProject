@@ -1,0 +1,10 @@
+<div class="list-books">
+    <div class="container my-5">
+        <h4 class="display-4 mb-5">Categories</h4>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let category of categories">
+                <app-category-cards [oneCategory]="category"></app-category-cards>
+            </div>
+        </div>
+    </div>
+</div>

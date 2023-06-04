@@ -35,6 +35,10 @@ import { SidebarAdminComponent } from './admin/dashboard/sidebar-admin/sidebar-a
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { BookCardComponent } from './book-card/book-card.component';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
+import { AuthorCardsComponent } from './author-details/author-cards/author-cards.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { CategoryCardsComponent } from './categories/category-cards/category-cards.component';
+import { CategoryCollectionComponent } from './categories/category-collection/category-collection.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +71,11 @@ import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.componen
     SidebarAdminComponent,
     AuthorDetailsComponent,
     BookCardComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    AuthorCardsComponent,
+    CategoriesComponent,
+    CategoryCardsComponent,
+    CategoryCollectionComponent
 
   ],
   imports: [
